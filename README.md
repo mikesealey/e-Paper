@@ -1,33 +1,12 @@
-﻿# e-Paper  
-waveshare electronics
-![waveshare_logo.png](waveshare_logo.png)
+﻿<h1>Notes about WeatherStation</h1>
+<h2>Hardware Notes</h2>
+<ul>
+    <li>Purchase date later than March 2021 is the V3 version, the current 7.5inch e-paper B shipping version, with the V3 logo on the back</li>
+    <li>When connecting the ribbon cable to the PiHAT, the copper connections face up</li>
 
-## 中文:  
-Jetson Nano、Raspberry Pi、Arduino、STM32例程
-* RaspberryPi_JetsonNano  
-    > C
-    > Python 
-* Arduino:  
-    > Arduino UNO  
-* STM32:  
-    > STM32F103ZET6 
-    
-更多资料请在官网上搜索:  
-http://www.waveshare.net
-
-
-## English:  
-Jetson Nano、Raspberry Pi、Arduino、STM32 Demo:  
-* RaspberryPi_JetsonNano:  
-    > C
-    > Python
-* Arduino:  
-    > Arduino UNO  
-* STM32:  
-    > STM32F103ZET6 
-    
-For more information, please search on the official website:   
-https://www.waveshare.com
-
-
-
+</ul>
+<h2>Software Notes</h2>
+<ul>
+    <li>WaveShare Test Program for this device is epd_7in5b_V2_test.py and can be found  in the testfile folder.</li>
+    <li>Run each program by using command <code>sudo python3 [filename]</code> from the directory the file is saved in.</li>
+</ul>

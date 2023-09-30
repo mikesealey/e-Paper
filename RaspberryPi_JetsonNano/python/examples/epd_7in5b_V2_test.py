@@ -23,6 +23,7 @@ try:
     epd.init()
     epd.Clear()
 
+    font72 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 72)
     font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
     font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
 
@@ -87,7 +88,13 @@ try:
 
     logging.info("Goto Sleep...")
     epd.sleep()
-    
+
+    logging.info("THIS IS MIKE'S BIT, LOOK!")
+    Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
+    Other = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
+    draw_Himage.text((10, 0), 'LOST THE GAME', font = font72, fill = 0)
+    time.sleep(5)
+
 except IOError as e:
     logging.info(e)
     
