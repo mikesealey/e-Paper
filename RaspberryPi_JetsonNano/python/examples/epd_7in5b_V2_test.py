@@ -23,8 +23,6 @@ try:
     epd.init()
     epd.Clear()
 
-    # Useless comment to test git
-
     font72 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 72)
     font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
     font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
@@ -49,40 +47,52 @@ try:
     epd.display(epd.getbuffer(Himage),epd.getbuffer(Other))
     time.sleep(2)
 
-    # Drawing on the Vertical image
-    logging.info("2.Drawing on the Vertical image...")
-    Limage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
-    Limage_Other = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
-    draw_Himage = ImageDraw.Draw(Limage)
-    draw_Himage_Other = ImageDraw.Draw(Limage_Other)
-    draw_Himage.text((2, 0), 'hello world', font = font18, fill = 0)
-    draw_Himage.text((2, 20), '7.5inch epd', font = font18, fill = 0)
-    draw_Himage_Other.text((20, 50), u'微雪电子', font = font18, fill = 0)
-    draw_Himage_Other.line((10, 90, 60, 140), fill = 0)
-    draw_Himage_Other.line((60, 90, 10, 140), fill = 0)
-    draw_Himage_Other.rectangle((10, 90, 60, 140), outline = 0)
-    draw_Himage_Other.line((95, 90, 95, 140), fill = 0)
-    draw_Himage.line((70, 115, 120, 115), fill = 0)
-    draw_Himage.arc((70, 90, 120, 140), 0, 360, fill = 0)
-    draw_Himage.rectangle((10, 150, 60, 200), fill = 0)
-    draw_Himage.chord((70, 150, 120, 200), 0, 360, fill = 0)
-    epd.display(epd.getbuffer(Limage), epd.getbuffer(Limage_Other))
+    logging.info("2. Mike's Bit!")
+    Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
+    Other = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
+    draw_Himage = ImageDraw.Draw(Himage)
+    draw_other = ImageDraw.Draw(Other)
+    draw_Himage.text((10, 0), "You've just lost the game", font = font72, fill = 0)
+    draw_Himage.text((10, 100), "You've just lost the game", font = font24, fill = 0)
+    draw_Himage.text((10, 200), "You've just lost the game", font = font18, fill = 0)
+    epd.display(epd.getbuffer(Himage),epd.getbuffer(Other))
     time.sleep(2)
 
-    logging.info("3.read bmp file")
-    Himage = Image.open(os.path.join(picdir, '7in5_V2_b.bmp'))
-    Himage_Other = Image.open(os.path.join(picdir, '7in5_V2_r.bmp'))
-    epd.display(epd.getbuffer(Himage),epd.getbuffer(Himage_Other))
-    time.sleep(2)
 
-    logging.info("4.read bmp file on window")
-    Himage2 = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
-    Himage2_Other = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
-    bmp = Image.open(os.path.join(picdir, '2in9.bmp'))
-    Himage2.paste(bmp, (50,10))
-    Himage2_Other.paste(bmp, (50,300))
-    epd.display(epd.getbuffer(Himage2), epd.getbuffer(Himage2_Other))
-    time.sleep(2)
+    # # Drawing on the Vertical image
+    # logging.info("2.Drawing on the Vertical image...")
+    # Limage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
+    # Limage_Other = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
+    # draw_Himage = ImageDraw.Draw(Limage)
+    # draw_Himage_Other = ImageDraw.Draw(Limage_Other)
+    # draw_Himage.text((2, 0), 'hello world', font = font18, fill = 0)
+    # draw_Himage.text((2, 20), '7.5inch epd', font = font18, fill = 0)
+    # draw_Himage_Other.text((20, 50), u'微雪电子', font = font18, fill = 0)
+    # draw_Himage_Other.line((10, 90, 60, 140), fill = 0)
+    # draw_Himage_Other.line((60, 90, 10, 140), fill = 0)
+    # draw_Himage_Other.rectangle((10, 90, 60, 140), outline = 0)
+    # draw_Himage_Other.line((95, 90, 95, 140), fill = 0)
+    # draw_Himage.line((70, 115, 120, 115), fill = 0)
+    # draw_Himage.arc((70, 90, 120, 140), 0, 360, fill = 0)
+    # draw_Himage.rectangle((10, 150, 60, 200), fill = 0)
+    # draw_Himage.chord((70, 150, 120, 200), 0, 360, fill = 0)
+    # epd.display(epd.getbuffer(Limage), epd.getbuffer(Limage_Other))
+    # time.sleep(2)
+
+    # logging.info("3.read bmp file")
+    # Himage = Image.open(os.path.join(picdir, '7in5_V2_b.bmp'))
+    # Himage_Other = Image.open(os.path.join(picdir, '7in5_V2_r.bmp'))
+    # epd.display(epd.getbuffer(Himage),epd.getbuffer(Himage_Other))
+    # time.sleep(2)
+
+    # logging.info("4.read bmp file on window")
+    # Himage2 = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
+    # Himage2_Other = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
+    # bmp = Image.open(os.path.join(picdir, '2in9.bmp'))
+    # Himage2.paste(bmp, (50,10))
+    # Himage2_Other.paste(bmp, (50,300))
+    # epd.display(epd.getbuffer(Himage2), epd.getbuffer(Himage2_Other))
+    # time.sleep(2)
 
     logging.info("Clear...")
     epd.init()
