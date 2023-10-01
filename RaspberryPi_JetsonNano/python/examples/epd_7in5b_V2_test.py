@@ -56,9 +56,9 @@ try:
     draw_Himage = ImageDraw.Draw(Himage)
 
     draw_other = ImageDraw.Draw(Other)
-    draw_Himage.text((10, 0), "Is this font monospaced?", font = font60, fill = 0)
+    draw_Himage.text((10, 0), "Is this font monospaced?", font = font60, fill = 256)
     draw_Himage.text((10, 100), "!!!!!", font = font24, fill = 0)
-    draw_Himage.text((10, 124), "88888", font = font24, fill = 0)
+    draw_Himage.text((10, 124), "88888", font = font24, fill = 256)
     draw_Himage.text((10, 200), "Well it looks like it... is/isn't [delete as appropriate]", font = font18, fill = 0)
     logging.info("64")
     logging.info("Next line is epd.display")
