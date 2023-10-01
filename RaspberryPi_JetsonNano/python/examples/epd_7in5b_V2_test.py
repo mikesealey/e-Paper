@@ -55,7 +55,7 @@ try:
     draw_Himage.text((10, 0), "You've just lost the game", font = font60, fill = 0)
     draw_Himage.text((10, 100), "You've just lost the game", font = font24, fill = 0)
     draw_Himage.text((10, 200), "You've just lost the game", font = font18, fill = 0)
-    epd.display(epd.getbuffer(Himage),epd.getbuffer(Other))
+    # epd.display(epd.getbuffer(Himage),epd.getbuffer(Other))
     time.sleep(5)
 
 
