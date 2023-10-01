@@ -20,9 +20,10 @@ try:
 
     epd = epd7in5b_V2.EPD()
     logging.info("init and Clear")
-    # epd.init()
-    # epd.Clear()
+    epd.init()
+    epd.Clear()
 
+    logging.info("Declaring Font Values")
     font60 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 60)
     font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
     font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
@@ -48,14 +49,19 @@ try:
     # time.sleep(2)
 
     logging.info("2. Mike's Bit!")
+    logging.info("Declaring Himage and Other")
     Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
     Other = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
+
+    logging.info("57")
     draw_Himage = ImageDraw.Draw(Himage)
+    logging.info("59")
     draw_other = ImageDraw.Draw(Other)
     draw_Himage.text((10, 0), "You've just lost the game", font = font60, fill = 0)
     draw_Himage.text((10, 100), "You've just lost the game", font = font24, fill = 0)
     draw_Himage.text((10, 200), "You've just lost the game", font = font18, fill = 0)
-    # epd.display(epd.getbuffer(Himage),epd.getbuffer(Other))
+    logging.info("64")
+    epd.display(epd.getbuffer(Himage),epd.getbuffer(Other))
     time.sleep(5)
 
 
