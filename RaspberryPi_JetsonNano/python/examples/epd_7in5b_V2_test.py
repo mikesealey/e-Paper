@@ -8,7 +8,7 @@ if os.path.exists(libdir):
     sys.path.append(libdir)
 
 import logging
-from waveshare_epd import epd7in5b_V2
+# from waveshare_epd import epd7in5b_V2
 import time
 from PIL import Image,ImageDraw,ImageFont
 import traceback
@@ -52,21 +52,15 @@ try:
     logging.info("Declaring Himage and Other")
     Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
     Other = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
-
     draw_Himage = ImageDraw.Draw(Himage)
-
     draw_other = ImageDraw.Draw(Other)
     draw_Himage.text((10, 0), "Is this font monospaced?", font = font60, fill = 256)
     draw_Himage.text((10, 100), "!!!!!", font = font24, fill = 0)
-    draw_Himage.text((10, 124), "88888", font = font24, fill = 256)
+    draw_Himage.text((10, 124), "88888", font = font24, fill = 127)
     draw_Himage.text((10, 200), "Well it looks like it... is/isn't [delete as appropriate]", font = font18, fill = 0)
     logging.info("64")
-    logging.info("Next line is epd.display")
     epd.display(epd.getbuffer(Himage),epd.getbuffer(Other))
-    logging.info("previous line was epd.display")
     time.sleep(5)
-    logging.info("Previous line was time.sleep")
-
 
     # Drawing on the Vertical image
     logging.info("2.Drawing on the Vertical image...")
