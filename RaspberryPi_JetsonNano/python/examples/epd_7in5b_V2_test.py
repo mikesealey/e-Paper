@@ -53,15 +53,14 @@ try:
     Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
     Other = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
 
-    # logging.info("57")
-    # draw_Himage = ImageDraw.Draw(Himage)
-    # logging.info("59")
-    # draw_other = ImageDraw.Draw(Other)
-    # draw_Himage.text((10, 0), "Is this font monospaced?", font = font60, fill = 0)
-    # draw_Himage.text((10, 100), "!!!!!", font = font24, fill = 0)
-    # draw_Himage.text((10, 100), "88888", font = font24, fill = 0)
-    # draw_Himage.text((10, 200), "Well it looks like it... is/isn't [delete as appropriate]", font = font18, fill = 0)
-    # logging.info("64")
+    draw_Himage = ImageDraw.Draw(Himage)
+
+    draw_other = ImageDraw.Draw(Other)
+    draw_Himage.text((10, 0), "Is this font monospaced?", font = font60, fill = 0)
+    draw_Himage.text((10, 100), "!!!!!", font = font24, fill = 0)
+    draw_Himage.text((10, 124), "88888", font = font24, fill = 0)
+    draw_Himage.text((10, 200), "Well it looks like it... is/isn't [delete as appropriate]", font = font18, fill = 0)
+    logging.info("64")
     logging.info("Next line is epd.display")
     epd.display(epd.getbuffer(Himage),epd.getbuffer(Other))
     logging.info("previous line was epd.display")
@@ -69,25 +68,25 @@ try:
     logging.info("Previous line was time.sleep")
 
 
-    # # Drawing on the Vertical image
-    # logging.info("2.Drawing on the Vertical image...")
-    # Limage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
-    # Limage_Other = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
-    # draw_Himage = ImageDraw.Draw(Limage)
-    # draw_Himage_Other = ImageDraw.Draw(Limage_Other)
-    # draw_Himage.text((2, 0), 'hello world', font = font18, fill = 0)
-    # draw_Himage.text((2, 20), '7.5inch epd', font = font18, fill = 0)
-    # draw_Himage_Other.text((20, 50), u'微雪电子', font = font18, fill = 0)
-    # draw_Himage_Other.line((10, 90, 60, 140), fill = 0)
-    # draw_Himage_Other.line((60, 90, 10, 140), fill = 0)
-    # draw_Himage_Other.rectangle((10, 90, 60, 140), outline = 0)
-    # draw_Himage_Other.line((95, 90, 95, 140), fill = 0)
-    # draw_Himage.line((70, 115, 120, 115), fill = 0)
-    # draw_Himage.arc((70, 90, 120, 140), 0, 360, fill = 0)
-    # draw_Himage.rectangle((10, 150, 60, 200), fill = 0)
-    # draw_Himage.chord((70, 150, 120, 200), 0, 360, fill = 0)
-    # epd.display(epd.getbuffer(Limage), epd.getbuffer(Limage_Other))
-    # time.sleep(2)
+    # Drawing on the Vertical image
+    logging.info("2.Drawing on the Vertical image...")
+    Limage = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
+    Limage_Other = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
+    draw_Himage = ImageDraw.Draw(Limage)
+    draw_Himage_Other = ImageDraw.Draw(Limage_Other)
+    draw_Himage.text((2, 0), 'hello world', font = font18, fill = 0)
+    draw_Himage.text((2, 20), '7.5inch epd', font = font18, fill = 0)
+    draw_Himage_Other.text((20, 50), u'微雪电子', font = font18, fill = 0)
+    draw_Himage_Other.line((10, 90, 60, 140), fill = 0)
+    draw_Himage_Other.line((60, 90, 10, 140), fill = 0)
+    draw_Himage_Other.rectangle((10, 90, 60, 140), outline = 0)
+    draw_Himage_Other.line((95, 90, 95, 140), fill = 0)
+    draw_Himage.line((70, 115, 120, 115), fill = 0)
+    draw_Himage.arc((70, 90, 120, 140), 0, 360, fill = 0)
+    draw_Himage.rectangle((10, 150, 60, 200), fill = 0)
+    draw_Himage.chord((70, 150, 120, 200), 0, 360, fill = 0)
+    epd.display(epd.getbuffer(Limage), epd.getbuffer(Limage_Other))
+    time.sleep(2)
 
     # logging.info("3.read bmp file")
     # Himage = Image.open(os.path.join(picdir, '7in5_V2_b.bmp'))
