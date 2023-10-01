@@ -57,12 +57,16 @@ try:
     draw_Himage = ImageDraw.Draw(Himage)
     logging.info("59")
     draw_other = ImageDraw.Draw(Other)
-    draw_Himage.text((10, 0), "You've just lost the game", font = font60, fill = 0)
-    draw_Himage.text((10, 100), "You've just lost the game", font = font24, fill = 0)
-    draw_Himage.text((10, 200), "You've just lost the game", font = font18, fill = 0)
+    draw_Himage.text((10, 0), "Is this font monospaced?", font = font60, fill = 0)
+    draw_Himage.text((10, 100), "!!!!!", font = font24, fill = 0)
+    draw_Himage.text((10, 100), "88888", font = font24, fill = 0)
+    draw_Himage.text((10, 200), "Well it looks like it... is/isn't [delete as appropriate]", font = font18, fill = 0)
     logging.info("64")
+    logging.info("Next line is epd.display")
     epd.display(epd.getbuffer(Himage),epd.getbuffer(Other))
+    logging.info("previous line was epd.display")
     time.sleep(5)
+    logging.info("Previous line was time.sleep")
 
 
     # # Drawing on the Vertical image
