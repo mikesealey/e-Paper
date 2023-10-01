@@ -20,10 +20,10 @@ try:
 
     epd = epd7in5b_V2.EPD()
     logging.info("init and Clear")
-    epd.init()
-    epd.Clear()
+    # epd.init()
+    # epd.Clear()
 
-    font72 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 72)
+    font60 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 60)
     font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
     font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
 
@@ -52,7 +52,7 @@ try:
     Other = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
     draw_Himage = ImageDraw.Draw(Himage)
     draw_other = ImageDraw.Draw(Other)
-    draw_Himage.text((10, 0), "You've just lost the game", font = font72, fill = 0)
+    draw_Himage.text((10, 0), "You've just lost the game", font = font60, fill = 0)
     draw_Himage.text((10, 100), "You've just lost the game", font = font24, fill = 0)
     draw_Himage.text((10, 200), "You've just lost the game", font = font18, fill = 0)
     epd.display(epd.getbuffer(Himage),epd.getbuffer(Other))
